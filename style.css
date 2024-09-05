@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.card {
+    transition: all 0.3s;
+    background-color: rgba(79, 23, 23, 0.8);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: #0066cc;
+    border-color: #0066cc;
+}
+
+.btn-primary:hover {
+    background-color: #0052a3;
+    border-color: #0052a3;
+}
+
+#contact {
+    background-color: rgba(245, 245, 245, 0.6);
+}
+
+.card-title {
+    cursor: pointer;
+}
+
+.project-bg {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+}
+
+#formSubmission {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(248, 249, 250, 0.8);
+    border-radius: 5px;
+}
+
+#portfolio h2 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#contactForm {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+}
