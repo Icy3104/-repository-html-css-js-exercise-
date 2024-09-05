@@ -12,7 +12,6 @@
     >
     
     <style>
-        /* Custom styles */
         body {
             font-family: Arial, sans-serif;
             background-image: url('background.jpg');
@@ -26,6 +25,7 @@
         
         .card {
             transition: all 0.3s;
+            background-color: rgba(255, 255, 255, 0.8);
         }
         
         .card:hover {
@@ -44,7 +44,7 @@
         }
         
         #contact {
-            background-color: rgba(245, 245, 245, 0.8);
+            background-color: rgba(245, 245, 245, 0.6);
         }
         
         .card-title {
@@ -56,12 +56,25 @@
             background-position: center;
             height: 200px;
         }
-        
-        /* Additional spacing for visual length */
-        
-        
-        
-        
+
+        #formSubmission {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(248, 249, 250, 0.8);
+            border-radius: 5px;
+        }
+
+        #portfolio h2 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        #contactForm {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -112,10 +125,10 @@
                         ></div>
                         <div class="card-body">
                             <h5 class="card-title" onclick="changeBackgroundColor('#ffeeee')">
-                                Cool Project 1
+                                Project 1
                             </h5>
                             <p class="card-text">
-                                This is a brief description of my first project.
+                                Filler to say something.
                             </p>
                             <button 
                                 class="btn btn-primary" 
@@ -137,10 +150,10 @@
                         ></div>
                         <div class="card-body">
                             <h5 class="card-title" onclick="changeBackgroundColor('#eeffee')">
-                                Awesome Project 2
+                                Project 2
                             </h5>
                             <p class="card-text">
-                                Here's a quick summary of my second project.
+                                 Filler to say something.
                             </p>
                             <button 
                                 class="btn btn-primary" 
@@ -162,10 +175,10 @@
                         ></div>
                         <div class="card-body">
                             <h5 class="card-title" onclick="changeBackgroundColor('#eeeeff')">
-                                Amazing Project 3
+                                Project 3
                             </h5>
                             <p class="card-text">
-                                A short description of my third project goes here.
+                                 Filler to say something.
                             </p>
                             <button 
                                 class="btn btn-primary" 
@@ -192,7 +205,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        Cool Project 1 Details
+                        Project 1 Details
                     </h5>
                     <button 
                         type="button" 
@@ -228,7 +241,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        Awesome Project 2 Details
+                        Project 2 Details
                     </h5>
                     <button 
                         type="button" 
@@ -264,7 +277,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        Amazing Project 3 Details
+                        Project 3 Details
                     </h5>
                     <button 
                         type="button" 
@@ -336,6 +349,14 @@
                             Send Message
                         </button>
                     </form>
+                    <div id="formSubmission" class="mt-4">
+                        <h4>Thank you for your message!</h4>
+                        <p>We have received the following details:</p>
+                        <p><strong>Name:</strong> <span id="submittedName"></span></p>
+                        <p><strong>Email:</strong> <span id="submittedEmail"></span></p>
+                        <p><strong>Message:</strong> <span id="submittedMessage"></span></p>
+                        <p>We will reply as soon as possible. Have a nice day!</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -348,29 +369,31 @@
     
     <!-- Custom JavaScript -->
     <script>
-        // Function to change background color of portfolio section
+      
         function changeBackgroundColor(color) {
             document.getElementById('portfolio').style.backgroundColor = color;
         }
         
-        // Function to handle form submission
+       
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
+            
+          
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            
+           
+            document.getElementById('submittedName').textContent = name;
+            document.getElementById('submittedEmail').textContent = email;
+            document.getElementById('submittedMessage').textContent = message;
+            
+          
+            document.getElementById('formSubmission').style.display = 'block';
+            
+           
+            this.style.display = 'none';
         });
-        
-        // Additional space for visual length
-        
-        
-        
-        
     </script>
-    
-    <!-- Additional space for visual length -->
-    
-    
-    
-    
 </body>
 </html>
